@@ -66,9 +66,8 @@ a {
   align-items: center;
 }
 
-p{
+p {
   margin-top: 2rem;
-
 }
 
 ul {
@@ -78,4 +77,14 @@ ul {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+}
+
+.mouseAnime {
+  position: relative;
+  top: -25px;
+  left: -35px;
+  width: 500px;
+  height: auto;
+  display: block;
+  z-index: 999;
 }

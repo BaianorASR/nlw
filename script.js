@@ -1,6 +1,7 @@
 const linksSocialMedia = {
   github: 'BaianorASR',
-  youtube: 'watch?v=bjiEopV9DFc',
+  youtube:
+    'watch?v=fCQufN8Wsgc&list=PLEekdKwBpPfDQmKkTx-AX2TNj5hzlPk2l&index=142',
   instagram: 'BaianorASR',
   facebook: 'BaianorASR',
   twitter: 'BaianorASR'
@@ -13,3 +14,17 @@ function changeSocialMediaLinks() {
   }
 }
 changeSocialMediaLinks()
+
+function getGitHubProfileInfos() {
+  const url = `https://api.github.com/users/${linksSocialMedia.github}`
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      userName.textContent = data.name
+      userBio.textContent = data.bio
+      profilePhoto.src = data.avatar_url
+      githubLogin.href = data.html_url
+      githubName.textContent = data.login
+    })
+}
+getGitHubProfileInfos()
