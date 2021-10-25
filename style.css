@@ -42,6 +42,7 @@ main {
   margin-right: auto;
   text-align: center;
   color: var(--grey);
+  z-index: 1;
 }
 
 .avatar {
@@ -75,6 +76,7 @@ a {
   display: flex;
   gap: 0.75rem;
   justify-content: center;
+  z-index: 1;
 }
 
 p {
@@ -88,19 +90,21 @@ ul {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  z-index: 1;
 }
 li a img:hover {
   transition: 0.3s;
   border-radius: 40%;
-  filter: contrast(110%);
-  border-color: #ff008e;
+  filter: contrast(120%);
   animation: bounce 0.6s;
-  border-style: inset;
+  box-shadow: 4px 4px 4px gold;
 }
 li a img {
-  border-style: inset;
+  z-index: 1;
+  
   border-radius: 40%;
-  border-color: #ff7a29;
+  
+  border-bottom: 2px inset #ff7a29;
 }
 
 @media (max-width: 500px) {
@@ -132,7 +136,13 @@ li a img {
     height: 540px;
     left: 541px;
     top: 140px;
+    border-radius: 4%;
+    overflow: hidden;
+    display: flex;
     box-shadow: 0rem 0.7rem 1rem rgba(0, 0, 0, 0.452);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-left:2px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
   }
 
   .avatar {
@@ -142,30 +152,34 @@ li a img {
   ul {
     margin-top: 2.5rem;
   }
+  .faixa {
+    background: linear-gradient(
+      105deg,
+      #ff008e 30.24%,
+      #f7ae25 100%,
+      yellow 100%
+    );
+    width: 90px;
+    height: 740px;
+    position: absolute;
+    margin-top: -45rem;
+    margin-left: 8.9rem;
+    z-index: 2;
+    box-shadow: 4px 2px 8px #202024;
+    border-left:1px outset rgba(255, 255, 255, 0.3);
+  }
+  .cabo {
+    position: absolute;
+    background: #121214;
+    width: 100px;
+    height: 8px;
+    margin-top: 18px;
+    margin-left: 137px;
+    z-index: 1;
+  }
 }
 
-.faixa {
-  background: linear-gradient(
-    105deg,
-    #ff008e 30.24%,
-    #f7ae25 100%,
-    yellow 100%
-  );
-  width: 90px;
-  height: 740px;
-  position: absolute;
-  margin-top: -45rem;
-  margin-left: 8.9rem;
-  z-index: 2;
-}
-.cabo {
-  position: absolute;
-  background: #121214;
-  width: 100px;
-  height: 8px;
-  margin-top: 18px;
-  margin-left: 137px;
-}
+
 
 .avatar span {
   -webkit-animation-name: rotate;
